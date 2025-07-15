@@ -10,8 +10,9 @@ const[isLoading,changeLoading]=useState(true)
         []
     )
     const fetchData=()=>{
-        axios.get("https://api.github.com/users ").then(
+        axios.get("https://api.github.com/users").then(
             (response)=>{
+                changeLoading(false)
                 ChangeUser(response.data)
             }
         ).catch(
